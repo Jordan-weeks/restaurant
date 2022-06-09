@@ -1,0 +1,29 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: slategray;
+}
+.nav{ 
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 2.5rem;
+}
+.hero{
+    background-image: url(assets/beer.jpg);
+    background-color: #cccccc;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+}
+.hero-text{
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    font-size: 3rem;
+
+}
