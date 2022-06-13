@@ -1,12 +1,5 @@
 const buildMenu = () =>{
-  //create beer cards
-  // class beerFactory {
-  //   constructor(beerName, abv, ibu, description){
-  //     this.beerName = beerName
-  //     this.abv = abv
-  //     this. ibu = ibu
-  //     this.description = description
-  //   }
+  
     let tapList = [{
       beerName: "Fresh Haze IPA",
       ibu: "45",
@@ -17,15 +10,22 @@ const buildMenu = () =>{
       beerName: "Black Butte Porter",
       ibu: "30",
       abv: "5.5%",
-      description: "Bold reputation. Soft disposition. Surprising Balance. Behold an iconic and unexpectedly complex porter that’s more than meets the eye."
+      description: "Bold reputation. Soft disposition. Surprising Balance. Behold an iconic and unexpectedly complex porter that's more than meets the eye."
+      },
+      {
+      beerName: "Neon Daydream",
+      ibu: "35",
+      abv: "4.8%",
+      description: "Drift beneath dayglow skies on a cool, refreshing current of zesty candied orange and lemon notes, immersed in the mellow malt embrace of a deliciously lazy, hazy afternoon."
       }
   ]
-    const buildCard = (beerName,abv,ibu,description)=> {
+
+    const buildCard = ({beerName,ibu,abv,description})=> {
       let card = document.createElement("div")
       let beerNameElement = document.createElement("h1")
-      let abvElement = document.createElement("p")
-      let ibuElement = document.createElement("p")
-      let descriptionElement = document.createElement("p")
+      let abvElement = document.createElement("div")
+      let ibuElement = document.createElement("div")
+      let descriptionElement = document.createElement("div")
 
       card.classList.add("beer-card")
       
@@ -33,9 +33,9 @@ const buildMenu = () =>{
       abvElement.innerText=`ABV: ${abv}`
       ibuElement.innerText=`IBU: ${ibu}`
       descriptionElement.innerText=`${ description }`
-
-      card.appendChild(beerNameElement,abvElement,ibuElement,descriptionElement)
-
+      heroText.appendChild(card)
+      card.append(beerNameElement,abvElement,ibuElement,descriptionElement)
+      
     }
   
   
@@ -44,13 +44,13 @@ const buildMenu = () =>{
   let hero = document.createElement("div")
   let heroText = document.createElement("div")
   let h1 = document.createElement("h1")
-  let h2 = document.createElement("h1")
+  
   
   //append DOM elements
   content.appendChild(hero)
   hero.appendChild(heroText)
   heroText.appendChild(h1)
-  heroText.appendChild(h2)
+  
   
   //apply classes to elements
   hero.classList.add("menu")
@@ -59,6 +59,7 @@ const buildMenu = () =>{
   // apply inner text
   h1.innerText = "The Brews"
   
-  
+
+tapList.forEach(buildCard)
 }
 export {buildMenu}
