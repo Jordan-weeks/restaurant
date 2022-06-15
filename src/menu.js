@@ -33,7 +33,7 @@ const buildMenu = () =>{
       abvElement.innerText=`ABV: ${abv}`
       ibuElement.innerText=`IBU: ${ibu}`
       descriptionElement.innerText=`${ description }`
-      heroText.appendChild(card)
+      menuContent.appendChild(card)
       card.append(beerNameElement,abvElement,ibuElement,descriptionElement)
       
     }
@@ -41,20 +41,22 @@ const buildMenu = () =>{
   
       // create DOM elements
   let content = document.getElementById("content")
-  let hero = document.createElement("div")
-  let heroText = document.createElement("div")
+  let menuPage = document.createElement("div")
+  let menuContent = document.createElement("div")
   let h1 = document.createElement("h1")
-  
+  let menuButton = document.querySelector(".menu")
+    
   
   //append DOM elements
-  content.appendChild(hero)
-  hero.appendChild(heroText)
-  heroText.appendChild(h1)
+  content.appendChild(menuPage)
+  menuPage.appendChild(menuContent)
+  menuContent.appendChild(h1)
   
   
   //apply classes to elements
-  hero.classList.add("menu")
-  heroText.classList.add("hero-text")
+  menuPage.classList.add("menu-page")
+  menuContent.classList.add("menu-content")
+  menuButton.classList.add("nav-active")
   
   // apply inner text
   h1.innerText = "The Brews"

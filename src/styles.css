@@ -1,16 +1,42 @@
+html{
+    scrollbar-gutter: stable both-edges;
+    overflow-y: scroll;
+}
 body{
     padding: 0;
     margin: 0;
-    background-color: slategray;
+    background-color: #212522;
+    line-height: 1.6;
+    
+    
+    color: whitesmoke;
 }
+   
 .nav{ 
+    margin: 1em;
     display: flex;
     justify-content: space-evenly;
     font-size: 2.5rem;
 }
+.nav > div{
+cursor:pointer;
+border: solid 1px transparent;
+padding: 0 .5em;
+transition: .6s;
+
+}
+.nav-active{
+    border-bottom: solid 1px whitesmoke !important;
+    transform: translate(0, -5px);
+}
+
+.nav >div:hover{   
+    transform: translate(0, -5px);
+}
+
+
 .hero{
-    background-image: url(assets/beer.jpg);
-    background-color: #cccccc;
+
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
@@ -26,4 +52,41 @@ body{
     
     font-size: 3rem;
 
+}
+.hero-text>h1{
+    margin: 0;
+}
+.hero-text>img{
+    
+    max-height: 7.5em;
+    border-radius: 50%;
+    margin: .5em;
+}
+.menu-page{
+    margin-bottom: 3rem;
+}
+.menu-content{
+    display:grid;
+    justify-items: center;
+    gap: 2em;
+    
+}
+.beer-card{
+    width: 50%;
+    display:grid;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 1em;
+    border-bottom: 2px solid whitesmoke;
+
+}
+.about-page{
+    display: grid;
+    width: 100%;    
+    justify-items: center;
+}
+.about-page > h1, .about-page>div {
+    width: 50%;
+    text-align: center;
+    /* justify-self: center; */
 }
